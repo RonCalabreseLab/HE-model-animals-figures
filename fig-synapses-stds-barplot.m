@@ -1,18 +1,22 @@
 
 %% Preparation for all figures
 
+% CHANGE THESE VARIABLES BASED ON YOUR DOWNLOAD FOLDERS:
+
+data_dir = '../data'
+common_dir = '../HE-model-analysis-matlab'
+
+% ****************************************
+
 % common include
 common
 
-% TODO: copy these over
-
 % load targets
-load '../run-synscale/targets_synscale_20rand_6inputs_pairs_MPP.mat'
+load([ data_dir filesep 'targets_synscale_20rand_6inputs_pairs_MPP.mat' ])
 
 % with rel stds
-load 'targets_6inputs_pairs_MPP_relsyns.mat' 
-load 'targets_6inputs_pairs_MPP_relsyns_std.mat' 
-
+load([ data_dir filesep 'targets_6inputs_pairs_MPP_relsyns.mat' ])
+load([ data_dir filesep 'targets_6inputs_pairs_MPP_relsyns_std.mat' ])
 syns_labels = {
   'synS_HE8_HN3_rel',
   'synS_HE8_HN4_rel',
@@ -27,19 +31,19 @@ syns_labels = {
 
 % TODO: share data here
 
-run ../../common/analysis/5_27B-Oct16/HN03_HE08_avg_std.m
+run([ common_dir filesep '5_27B-Oct16/HN03_HE08_avg_std.m' ])
 scale = ...
-    target_HE8_12_syns_rel_std_db(find(target_HE8_12_syns_rel_db(:, ...
+    get(target_HE8_12_syns_rel_std_db(find(target_HE8_12_syns_rel_db(:, ...
                                                   'inputdir') == 6), ...
-                                  'synS_HE8_HN3_rel', 1).data ./ amplL;
+                                  'synS_HE8_HN3_rel', 1), 'data') ./ amplL;
 hn3_he8_5_27b_plot = sta_shape_plot((1:size(avg_array, 1))'*dt, ...
                                     avg_array * scale, std_array * scale);
 
-run ../../common/analysis/5_27B-Oct16/HN07_HE08_avg_std.m
+run([ common_dir filesep '5_27B-Oct16/HN07_HE08_avg_std.m' ])
 scale = ...
-    target_HE8_12_syns_rel_std_db(find(target_HE8_12_syns_rel_db(:, ...
+    get(target_HE8_12_syns_rel_std_db(find(target_HE8_12_syns_rel_db(:, ...
                                                   'inputdir') == 6), ...
-                                  'synS_HE8_HN7_rel', 1).data ./ amplL;
+                                  'synS_HE8_HN7_rel', 1), 'data') ./ amplL;
 hn7_he8_5_27b_plot = sta_shape_plot((1:size(avg_array, 1))'*dt, ...
                                     avg_array * scale, std_array * scale);
 
