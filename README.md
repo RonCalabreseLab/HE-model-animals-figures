@@ -6,7 +6,7 @@ Matlab code for generating figures of the paper ["Synaptic Strengths Dominate Ph
 
 - [Common scripts for the HE model](https://github.com/RonCalabreseLab/HE-model-analysis-matlab)
 - [Spike-triggered averaging Matlab toolbox](https://github.com/RonCalabreseLab/HN-HE-synapses-STA)
-- [Leech heart motor neuron animal-to-animal variability paper figures simulation data](https://figshare.com/articles/online_resource/Leech_heart_motor_neuron_animal-to-animal_variability_paper_figures_simulation_data/7963748)
+- [Leech heart motor neuron animal-to-animal variability paper figures simulation data](https://doi.org/10.6084/m9.figshare.7963748.v3)
 - [Pandora Matlab Toolbox v1.4](https://github.com/cengique/pandora-matlab)
 
 ## How to generate figures
