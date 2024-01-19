@@ -31,13 +31,17 @@ syns_labels = {
 
 % TODO: share data here
 
+% not sure about this:
+dt = 10e-4
+
 run([ common_dir filesep '5_27B-Oct16/HN03_HE08_avg_std.m' ])
 scale = ...
     get(target_HE8_12_syns_rel_std_db(find(target_HE8_12_syns_rel_db(:, ...
                                                   'inputdir') == 6), ...
-                                  'synS_HE8_HN3_rel', 1), 'data') ./ amplL;
-hn3_he8_5_27b_plot = sta_shape_plot((1:size(avg_array, 1))'*dt, ...
-                                    avg_array * scale, std_array * scale);
+                                      'synS_HE8_HN3_rel', 1), 'data') ./ amplL;
+% can't find sta_shape_plot, so replace with plot for now
+hn3_he8_5_27b_plot = plot((1:size(avg_array, 1))'*dt, ...
+                                    [avg_array * scale, std_array * scale]);
 
 run([ common_dir filesep '5_27B-Oct16/HN07_HE08_avg_std.m' ])
 scale = ...
