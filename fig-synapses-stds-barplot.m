@@ -118,6 +118,8 @@ set(gca, 'XTickLabel', {'HN3', '4', '6', '7'})
 % the rest:
 set(gca, 'XTickLabel', {'3', '4', '6', '7'})
 
+% preview of figure saved as: fig-1D-rel-syn-weights.png
+
 %% 5/22B relative synaptic strengths versus top models
 
 % load and plot table
