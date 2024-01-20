@@ -72,6 +72,8 @@ plotFigure(plot_stack({hn3_he8_5_27b_plot, hn7_he8_5_27b_plot}, ...
                       struct('yLabelsPos', 'left', 'yTicksPos', 'left', ...
                              'noTitle', 1, 'fixedSize', [4 3])));
 
+% preview of figure saved as: fig-1C-sta-avg-std.png
+
 %% Relative synaptic strength bar plots showing all inputs for HE8 and HE12
 
 % HE8/12; input 6 temp values
